@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import WorkoutCard from './WorkoutCard';
+import { ajax } from 'jquery';
 
+const addNewWorkout = (workout) => {
+    ajax({
+        method: 'POST',
+        url: '/fit',
+        data: workout,
+    })
+}
 const AddWorkout = () => {
+    useEffect(() => {
+
+    })
     return (
         <View style={styles.container}> 
             <Text>Did You Workout Today? Let's Add A Workout!</Text>

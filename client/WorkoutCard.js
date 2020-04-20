@@ -1,8 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { useEffect } from 'react';
 import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import WorkoutButton from './WorkoutButton';
 import {set} from 'react-native-reanimated';
 import {render} from 'react-dom';
+
 
 // interface Props {
 //     muscleGroup: String,
@@ -11,6 +12,9 @@ import {render} from 'react-dom';
 // }
 
 const WorkoutCard = ({ muscleGroup, repsAndWeight, sets }) =>{
+useEffect(() => {
+
+})
         return (
             <View style={styles.card}>
             <View style={styles.topRow}>
@@ -25,13 +29,9 @@ const WorkoutCard = ({ muscleGroup, repsAndWeight, sets }) =>{
                     </View>
                 )
             })}
-            <View> 
-                
-            </View>
             </View>
         </View>
         )
-    
 } 
     
     const styles = StyleSheet.create({
@@ -62,12 +62,7 @@ const WorkoutCard = ({ muscleGroup, repsAndWeight, sets }) =>{
           borderRadius: 100,
           padding: 5,
           backgroundColor: '#FFF8DC',
-      },
-    //   bottomText: {
-    //       fontSize: 20,
-    //       textDecorationColor: '#2F4F4F',
-    //   }
-      
+      }
 })
 
 

@@ -5,15 +5,20 @@ class WorkoutButton extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            repStatus: '10'
+            repStatus: '10',
+            repCount: 0,
         }  
     }
 
     onPress = ()=> {
-        alert('I was pressed!')
+      this.state.repCount += 10;
+        // alert('I was pressed!')
+        console.log()
         this.setState({
             repStatus: 'X',
+            repCount: this.state.repCount,
         })
+        console.log(this.state.repCount)
     }
     
     render (){
