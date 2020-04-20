@@ -1,0 +1,47 @@
+[
+    {
+        "name": "My Weights Routine",
+        "muscleGroup": {
+            "arms": 20,
+            "chest": 50,
+            "shoulders": 30,
+            "core": 25,
+            "back": 125,
+            "legs": 140
+        },
+        "cardioLevel": 1,
+        "goalHeartRate": 155,
+        "estimatedDuration": 45,
+        "type": "Weight-Lifting"
+    },
+    {
+        "name": "My Cardio Routine",
+        "muscleGroup": {
+            "arms": 10,
+            "chest": 15,
+            "shoulders": 15,
+            "core": 15,
+            "back": 30,
+            "legs": 40,
+        },
+        "cardioLevel": 3,
+        "goalHeartRate": 165,
+        "estimatedDuration": 45,
+        "type": "Cardio"
+    },
+    {
+        "name": "My Hiit Routine",
+        "muscleGroup": {
+            "arms": 15,
+            "chest": 20,
+            "shoulders": 20,
+            "core": 30,
+            "back": 40,
+            "legs": 50,
+        },
+        "cardioLevel": 6,
+        "goalHeartRate": 180,
+        "estimatedDuration": 25,
+        "type": "Hiit"
+    }
+]
