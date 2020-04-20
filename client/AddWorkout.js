@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import WorkoutCard from './WorkoutCard';
 
 const AddWorkout = () => {
@@ -14,6 +14,14 @@ const AddWorkout = () => {
             <WorkoutCard muscleGroup="Back" repsAndWeight="3x10 @ 125" sets={["10", "10", "10"]}/>
             <WorkoutCard muscleGroup="Legs" repsAndWeight="5x10 @ 125" sets={["10", "10", "10", "10", "10"]}/>
         </View>
+        <View style={styles.card}> 
+        <TouchableOpacity
+        title="Save Workout"
+        style={styles.cards}
+        onPress={() => alert('this will be saved to your record')}> 
+        <Text>Save Workout</Text>
+        </TouchableOpacity>
+        </View>
         </View>
     );
 }
@@ -26,8 +34,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
 
     },
-    cards: {
-        justifyContent: 'space-between',
+    card: {
+            borderRadius: 3,
+            backgroundColor: '#008B8B',
+            shadowColor: '#000',
+            shadowOffset:   { width: 2, height: 2},
+            shadowOpacity: 0.3,
+            shadowRadius: 1,
+            flexDirection: 'column',
+            padding: 5,
+            margin: 3
       },
 });
 

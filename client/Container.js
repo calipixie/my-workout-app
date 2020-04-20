@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import WorkoutHistory from './WorkoutHistory';
+import AddWorkout from './AddWorkout';
 // import NewRoutine from './NewRoutine';
 // const routines = require('../data');
 
@@ -26,6 +27,7 @@ const Container = ({ navigation }) => {
         onPress={() => navigation.navigate("AddWorkout")}
         style={{position: 'absolute', bottom: 200}}>
           <Text style={{ fontSize: 20, color: '#000'}}>Add A Workout!</Text>
+
         </TouchableOpacity>
         </View>
 

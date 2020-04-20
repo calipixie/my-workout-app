@@ -1,46 +1,41 @@
 import React, { Component, useState } from 'react';
-import {View, Text, StyleSheet, Button } from 'react-native';
+import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
+import WorkoutButton from './WorkoutButton';
 import {set} from 'react-native-reanimated';
+import {render} from 'react-dom';
 
-interface Props {
-    muscleGroup: String,
-    repsAndWeight: String,
-    sets: String[],
-}
+// interface Props {
+//     muscleGroup: String,
+//     repsAndWeight: String,
+//     sets: String[],
+// }
 
-const WorkoutCard = ({ muscleGroup, repsAndWeight, sets }) => {
-    const [ text, setText] = useState('');
+const WorkoutCard = ({ muscleGroup, repsAndWeight, sets }) =>{
         return (
-        <View style={styles.card}>
+            <View style={styles.card}>
             <View style={styles.topRow}>
                 <Text style={styles.topText}>{muscleGroup}</Text>
-                <Text style={styles.topText}>{`${repsAndWeight}pounds`}</Text>
-            
+                <Text style={styles.topText}>{`${repsAndWeight}pounds`}</Text>   
             </View>
             <View style={styles.bottomRow}>
             {sets.map((set, index) => {
-                // if (set === 'x') {
-                //     return <Text style={styles.bottomText}>x</Text>
-                // }
-                // if (set === '') {
-                //     return <Text style={styles.bottomText} key={set + index}></Text>
-                // }
-                return (
-                    <View key={set + index} style={styles.circle}>
-                        <Button title={set}
-                        style={styles.bottomText}
-                        onPress={() => alert('one down!')}></Button>
-                        {/* <Text style={styles.bottomText}>{set}</Text> */}
+                        return (
+                            <View key={set + index} style={styles.circle}>
+                        <WorkoutButton set={set} />
                     </View>
                 )
             })}
+            <View> 
+                
+            </View>
             </View>
         </View>
         )
-}
-
-const styles = StyleSheet.create({
-    card: {
+    
+} 
+    
+    const styles = StyleSheet.create({
+        card: {
         borderRadius: 3,
         backgroundColor: '#008B8B',
         shadowColor: '#000',
@@ -64,8 +59,8 @@ const styles = StyleSheet.create({
           justifyContent: 'space-evenly'
       },
       circle: {
-          borderRadius: 75,
-          padding: 20,
+          borderRadius: 100,
+          padding: 5,
           backgroundColor: '#FFF8DC',
       },
     //   bottomText: {
