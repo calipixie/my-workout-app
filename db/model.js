@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = 'mongodb + srv://hiitlist:hiit@cluster0-rt13x.mongodb.net/test?retryWrites=true&w=majority'
+const mongoURI = 'mongodb+srv://hiitlist:hiit@cluster0-rt13x.mongodb.net/test?retryWrites=true&w=majority'
 
 const muscleSchema = new mongoose.Schema({
         arms: Number,

@@ -15,23 +15,24 @@ db.once('open', () => console.log('connected to database'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/fit', (err, res) => {
+app.get('/fit', (req, res) => {
     res.send(`let's get fit!`);
 })
 
-app.post('./fit', (err, res) => {
-    res.send('there was an attempt to post!')
+app.post('/fit', (req, res) => {
+    console.log(req.body)
+    res.send('there was a post!')
 })
 
-app.put('./fit/:id', (err, res) => {
+app.put('/fit/:id', (req, res) => {
     res.send('there was an attempt to put at an id!')
 })
 
-app.get('./fit/:id', (err, res) => {
+app.get('/fit/:id', (req, res) => {
     res.send('there was an attempt to get and id!')
 })
 
-app.delete('./fit/:id', (err, res) => {
+app.delete('/fit/:id', (req, res) => {
     res.send('there was an attempt to delete at id!')
 })
 
