@@ -16,18 +16,32 @@ class AddWorkout extends React.Component{
 addNewWorkout(workout){
     console.log(workout)
     ajax({
-        method: 'POST',
+        type: 'POST',
         url: 'http://localhost:4000/fit',
-        data: JSON.stringify({ workout }),
+        data: JSON.stringify({workout}),
         contentType: 'application/json',
-        success: workout => console.log("success on post!")
+        success: workout => console.log(workout),
+        error: e => console.log(e)
     })
 }
 
 addWorkout(){
-    let workout = this.state.workout;
-    alert(`${workout} was added`)
-    // this.addNewWorkout()
+    let workout = {        
+        "name": "My Weights Routine",
+        "muscleGroup": {
+            "arms": 20,
+            "chest": 50,
+            "shoulders": 30,
+            "core": 25,
+            "back": 125,
+            "legs": 140
+        },
+        "cardioLevel": 1,
+        "goalHeartRate": 155,
+        "estimatedDuration": 45,
+        "type": "Weight-Lifting"};
+    alert(`this workout will be saved to your profile ${addWorkout}`)
+    this.addNewWorkout(workout)
 }
     render (){
         const newWorkout = {        
@@ -65,7 +79,6 @@ addWorkout(){
         value={this.newWorkout}
         style={styles.cards}
         onPress={() => {
-            console.log(e)
             this.addWorkout()
             this.setState({ workout: newWorkout})
         }}> 
