@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {View, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
 import WorkoutButton from './WorkoutButton';
 import {set} from 'react-native-reanimated';
 import {render} from 'react-dom';
+import {setConfigurationAsync} from 'expo/build/AR';
 
 
 // interface Props {
@@ -12,10 +13,12 @@ import {render} from 'react-dom';
 // }
 
 const WorkoutCard = ({ muscleGroup, repsAndWeight, sets }) =>{
-useEffect(() => {
+    const [ count, setCount ] = useState(0);
+    console.log(count)
+    useEffect(() => {
 
-})
-        return (
+    }, [])
+    return (
             <View style={styles.card}>
             <View style={styles.topRow}>
                 <Text style={styles.topText}>{muscleGroup}</Text>
@@ -31,7 +34,7 @@ useEffect(() => {
             })}
             </View>
         </View>
-        )
+    )
 } 
     
     const styles = StyleSheet.create({
@@ -62,6 +65,12 @@ useEffect(() => {
           borderRadius: 100,
           padding: 5,
           backgroundColor: '#FFF8DC',
+      },
+      finish: {
+        borderRadius: 10,
+        padding: 5,
+        backgroundColor: '#DC143C',
+        justifyContent: 'center'
       }
 })
 
